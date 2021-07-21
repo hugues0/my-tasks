@@ -13,8 +13,8 @@
       "reminder": true
     },
     {
-      "text": "some random task",
-      "day": "idk when",
+      "text": "Take car for oil change",
+      "day": "feb 23th at noon",
       "reminder": true,
       "id": 3
     }
