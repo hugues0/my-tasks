@@ -68,13 +68,18 @@ function App() {
       },
       body: JSON.stringify(updTask),
     });
-    const data = await res.json();
-
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !data.reminder } : task
-      )
-    );
+    console.log(res)
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      setTasks(
+        tasks.map((task) =>
+          task.id === id ? { ...task, reminder: !data.reminder } : task
+        )
+      );
+      const response = await fetchTasks()
+      setTasks(response) 
+    }
   };
 
   return (
