@@ -5,7 +5,19 @@ const AddTask = ({onAdd}) => {
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
 
-    
+const onSubmit = (e) =>{
+    e.preventDefault()
+    if (!text || !day) {
+        alert('please fill required fields')
+        return
+    }
+    onAdd({text,day,reminder})
+
+    setText("")
+    setDay("")
+    setReminder(false)
+
+}
 
   return (
     <form className="add-form" onSubmit={onSubmit}>
